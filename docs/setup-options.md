@@ -96,19 +96,18 @@ docker compose -f compose.yaml \
 docker compose --project-name <project-name> -f ~/gitops/docker-compose.yml up -d
 ```
 
-### Setup ERPNext for SCM.
+### Setup ERPNext using containerized MariaDB and Redis.
 ```sh
 # Generate YAML
 docker compose -f compose.yaml \
   -f overrides/compose.mariadb.yaml \
   -f overrides/compose.redis.yaml \
+  -f overrides/compose.proxy.yaml \
   config > ~/gitops/docker-compose.yml
 
 # Start containers
 docker compose --project-name <project-name> -f ~/gitops/docker-compose.yml up -d
 ```
-
-> 💡 Currently, port 8080 has to be manually added to the compose file. Bug or feature?
 
 ## Create first site
 
