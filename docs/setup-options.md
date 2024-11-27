@@ -96,6 +96,18 @@ docker compose -f compose.yaml \
 docker compose --project-name <project-name> -f ~/gitops/docker-compose.yml up -d
 ```
 
+### Setup ERPNext for SCM.
+```sh
+# Generate YAML
+docker compose -f compose.yaml \
+  -f overrides/compose.mariadb.yaml \
+  -f overrides/compose.redis.yaml \
+  config > ~/gitops/docker-compose.yml
+
+# Start containers
+docker compose --project-name scm -f ~/gitops/docker-compose.yml up -d
+```
+
 ## Create first site
 
 After starting containers, the first site needs to be created. Refer [site operations](./site-operations.md#setup-new-site).
