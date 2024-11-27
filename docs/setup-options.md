@@ -105,7 +105,7 @@ docker compose -f compose.yaml \
   config > ~/gitops/docker-compose.yml
 
 # Start containers
-docker compose --project-name scm -f ~/gitops/docker-compose.yml up -d
+docker compose --project-name <project-name> -f ~/gitops/docker-compose.yml up -d
 ```
 
 > 💡 Currently, port 8080 has to be manually added to the compose file. Bug or feature?
