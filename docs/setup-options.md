@@ -108,6 +108,8 @@ docker compose -f compose.yaml \
 docker compose --project-name scm -f ~/gitops/docker-compose.yml up -d
 ```
 
+> 💡 Currently, port 8080 has to be manually added to the compose file. Bug or feature?
+
 ## Create first site
 
 After starting containers, the first site needs to be created. Refer [site operations](./site-operations.md#setup-new-site).
