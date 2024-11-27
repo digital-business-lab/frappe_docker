@@ -9,7 +9,7 @@ Note:
 - Wait for the `db` service to start and `configurator` to exit before trying to create a new site. Usually this takes up to 10 seconds.
 
 ```sh
-docker-compose exec backend bench new-site --no-mariadb-socket --mariadb-root-password <db-password> --admin-password <admin-password> <site-name>
+docker-compose exec backend bench new-site --project-name <project-name> --no-mariadb-socket --mariadb-root-password <db-password> --admin-password <admin-password> <site-name>
 ```
 
 If you need to install some app, specify `--install-app`. To see all options, just run `bench new-site --help`.
